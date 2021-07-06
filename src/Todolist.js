@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-exports default class TodoList extends React.Component{
+export default class TodoList extends React.Component{
     state = {
         todos: []
     }
@@ -12,10 +12,11 @@ exports default class TodoList extends React.Component{
         this.setState({ todos });
       })
     }
+
     render() {
         return (
           <ul>
-            { this.state.todos.map(person => <li>{todos.name}</li>)}
+            { this.state.todos.map(person => <li>{person.name}</li>)}
           </ul>
         )
       }
