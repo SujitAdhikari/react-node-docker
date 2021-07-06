@@ -13,7 +13,7 @@ or
 $ npm run build #create build dir and index.html
 
 
-$ git clone https://github.com/shajalahamedcse/react-docker.git
+$ git clone https://github.com/Sujit-Adhikari/react-docker.git
 $ cd react-docker
 $ code .
 
