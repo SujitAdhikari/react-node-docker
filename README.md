@@ -7,6 +7,10 @@ One way to build this feature is to use the Javascript Fetch API. Fetch is quite
 A more popular way of performing this operation is to use the Axios library. Axios is designed to handle http requests and responses.
 It's used more often than Fetch because it has a larger set of features and it supports older browsers.
 
+**Nginx:**
+Nginx, pronounced like “engine-ex”, is an open-source web server that, since its initial success as a web server, is now also used as a reverse proxy, HTTP cache, and load balancer.
+Some high-profile companies using Nginx include Autodesk, Atlassian, Intuit, T-Mobile, GitLab, DuckDuckGo, Microsoft, IBM, Google, Adobe, Salesforce, VMWare, Xerox, LinkedIn, Cisco, Facebook, Target, Citrix Systems, Twitter, Apple, Intel, and many more (source).
+
 **npm init:**
 npm init <initializer> can be used to set up a new or existing npm package. initializer in this case is an npm package named create-<initializer>, which will be installed by npm-exec, and then have its main bin executed -- presumably creating or updating package.json and running any other initialization-related operations.
 
@@ -65,6 +69,30 @@ function App() {
 
 export default App;
 ```
+
+I am using nginx for web server. Dockerfile will install nginx. So here is the Nginx configuration:
+
+**Create conf/conf.d directory in react-docker directory:**
+$ mkdir conf/conf.d  
+$ vim conf/conf.d/default.conf  
+```
+server {
+  listen 80;
+  location / {
+    root   /usr/share/nginx/html;
+    index  index.html index.htm;
+    try_files $uri $uri/ /index.html;
+  }
+  location /api/v1/ {
+      proxy_pass      http://backend:8080;
+  }
+  error_page   500 502 503 504  /50x.html;
+  location = /50x.html {
+    root   /usr/share/nginx/html;
+  }
+}
+```
+        
 Create Dockerfile:
 ```
 FROM node:latest as builder
