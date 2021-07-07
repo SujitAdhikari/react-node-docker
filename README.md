@@ -77,9 +77,6 @@ server {
     index  index.html index.htm;
     try_files $uri $uri/ /index.html;
   }
-  location /api/v1/ {
-      proxy_pass      http://backend:8080;
-  }
   error_page   500 502 503 504  /50x.html;
   location = /50x.html {
     root   /usr/share/nginx/html;
