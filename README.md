@@ -11,12 +11,6 @@ It's used more often than Fetch because it has a larger set of features and it s
 Nginx, pronounced like “engine-ex”, is an open-source web server that, since its initial success as a web server, is now also used as a reverse proxy, HTTP cache, and load balancer.
 Some high-profile companies using Nginx include Autodesk, Atlassian, Intuit, T-Mobile, GitLab, DuckDuckGo, Microsoft, IBM, Google, Adobe, Salesforce, VMWare, Xerox, LinkedIn, Cisco, Facebook, Target, Citrix Systems, Twitter, Apple, Intel, and many more (source).
 
-**npm init:**
-npm init <initializer> can be used to set up a new or existing npm package. initializer in this case is an npm package named create-<initializer>, which will be installed by npm-exec, and then have its main bin executed -- presumably creating or updating package.json and running any other initialization-related operations.
-
-**npm-start:**
-This runs a predefined command specified in the "start" property of a package's "scripts" object. If the "scripts" object does not define a "start" property, npm will run node server.js.
-
 **Create a React App:**
 --------------------------------
 $ npx create-react-app react-docker  ###create package.json(Package Dependency) using npm init command.  
@@ -122,11 +116,22 @@ $ docker build -t sujit/react-docker:v1.0.1 .
 $ docker run -p 8080:80 sujit/react-docker:v1.0.1 
     
 **Without using Docker**  
-$ git clone https://github.com/SujitAdhikari/react-docker.git 
-$ cd react-docker  ##$ code .    #for vscode
+$ git clone https://github.com/SujitAdhikari/react-docker.git  
+$ cd react-docker Note: ($ code . #open vscode)  
 $ npm install  
 $ npm start  
 
+--------------------------Note-----------------------------
+**npm init:**
+npm init <initializer> can be used to set up a new or existing npm package. initializer in this case is an npm package named create-<initializer>, which will be installed by npm-exec, and then have its main bin executed -- presumably creating or updating package.json and running any other initialization-related operations.
+
+**npm start:**
+This runs a predefined command specified in the "start" property of a package's "scripts" object. If the "scripts" object does not define a "start" property, npm will run node server.js.
+
+**npm build:**
+npm run build: runs the build field from the package.json scripts field. npm run build creates a build directory with a production build of your app. Inside the build/static directory will be your JavaScript and CSS files. Each filename inside of build/static will contain a unique hash of the file contents. This hash in the file name enables long term caching techniques.
+
+ 
 $ npm build  
 or
 $ npm run build #create build dir and index.html  
