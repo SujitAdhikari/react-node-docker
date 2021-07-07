@@ -121,10 +121,9 @@ $ docker run -p <outer_port>:<inner_port> <usrname>/<image_name>:version
 $ docker build -t sujit/react-docker:v1.0.1 .  
 $ docker run -p 8080:80 sujit/react-docker:v1.0.1 
     
-**Without using Docker**
+**Without using Docker**  
 $ git clone https://github.com/SujitAdhikari/react-docker.git 
-$ cd react-docker  
-$ code .    
+$ cd react-docker  ##$ code .    #for vscode
 $ npm install  
 $ npm start  
 
