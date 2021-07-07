@@ -66,7 +66,7 @@ function App() {
 export default App;
 ```
 Create Dockerfile:
-'''
+```
 FROM node:latest as builder
 WORKDIR /usr/src/app
 COPY package.json .
@@ -82,7 +82,7 @@ COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-'''
+```
 
 **Using Docker:**  
 $ docker build -t <username>/<image_name>:version .  
