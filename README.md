@@ -64,7 +64,7 @@ function App() {
 export default App;
 ```
 
-I am using nginx for web server. Dockerfile will install nginx. So here is the Nginx configuration:
+I am using nginx for web server. Dockerfile will install nginx. So here is the Nginx configuration file:
 
 **Create conf/conf.d directory in react-docker directory:**  
 $ mkdir conf/conf.d -p  
