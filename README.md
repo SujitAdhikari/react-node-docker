@@ -67,7 +67,7 @@ export default App;
 ```
 
 **Using Docker:**  
-$ docker build -t <username>/<image_name>:version .
+$ docker build -t <username>/<image_name>:version .  
 $ docker run -p <outer_port>:<inner_port> <username>/<image_name>:version
     
     
