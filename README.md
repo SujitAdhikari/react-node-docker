@@ -131,4 +131,4 @@ npm run build: runs the build field from the package.json scripts field. npm run
  
 $ npm build  
 or
-$ npm run build #create build dir and index.html  
+$ npm run build Note: #create build dir and index.html  
