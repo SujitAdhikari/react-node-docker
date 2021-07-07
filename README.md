@@ -118,7 +118,7 @@ $ docker run -p <outer_port>:<inner_port> <username>/<image_name>:version
     
     
 **Without using Docker**
-$ git clone https://github.com/Sujit-Adhikari/react-docker.git  
+$ git clone https://github.com/SujitAdhikari/react-docker.git 
 $ cd react-docker  
 $ code .    
 $ npm install  
