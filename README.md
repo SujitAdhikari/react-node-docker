@@ -62,15 +62,14 @@ function App() {
 
 export default App;
 ```
-$ npm build 
+
+**Without using Docker**
+$ git clone https://github.com/Sujit-Adhikari/react-docker.git  
+$ cd react-docker  
+$ code .    
+$ npm install  
+$ npm start  
+
+$ npm build  
 or
-$ npm run build #create build dir and index.html
-
-
-$ git clone https://github.com/Sujit-Adhikari/react-docker.git
-$ cd react-docker
-$ code .
-
-Without using Docker
-$ npm install
-$ npm start
+$ npm run build #create build dir and index.html  
