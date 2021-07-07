@@ -16,7 +16,7 @@ Some high-profile companies using Nginx include Autodesk, Atlassian, Intuit, T-M
 $ npx create-react-app react-docker  ###create package.json(Package Dependency) using npm init command.  
 $ cd react-docker  
 $ npm install axios  
-$ npm start   #nodejs server start  
+$ npm start   
 
 **Create Todolist.js file**  
 **Code:**  
