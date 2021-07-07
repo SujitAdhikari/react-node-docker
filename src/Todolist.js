@@ -16,7 +16,7 @@ export default class TodoList extends React.Component{
     render() {
         return (
           <ul>
-            { this.state.todos.map(person => <li>{todos.name}</li>)}
+            { this.state.todos.map(todos => <li>{todos.name}</li>)}
           </ul>
         )
       }
