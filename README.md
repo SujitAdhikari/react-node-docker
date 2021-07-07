@@ -112,10 +112,11 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-**Using Docker:**  
-$ docker build -t <username>/<image_name>:version .  
-$ docker run -p <outer_port>:<inner_port> <username>/<image_name>:version
-    
+**Using Docker:**
+```
+$ docker build -t <usrname>/<image_name>:version .  
+$ docker run -p <outer_port>:<inner_port> <usrname>/<image_name>:version  
+```
     
 **Without using Docker**
 $ git clone https://github.com/SujitAdhikari/react-docker.git 
