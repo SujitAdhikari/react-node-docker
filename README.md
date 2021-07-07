@@ -117,6 +117,9 @@ CMD ["nginx", "-g", "daemon off;"]
 $ docker build -t <usrname>/<image_name>:version .  
 $ docker run -p <outer_port>:<inner_port> <usrname>/<image_name>:version  
 ```
+**Command:**  
+$ docker build -t sujit/react-docker:v1.0.1 .  
+$ docker run -p 8080:80 sujit/react-docker:v1.0.1 
     
 **Without using Docker**
 $ git clone https://github.com/SujitAdhikari/react-docker.git 
