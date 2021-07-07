@@ -121,7 +121,7 @@ $ cd react-docker Note: ($ code . #open vscode)
 $ npm install  
 $ npm start  
 
---------------------------Note-----------------------------
+--------------------------Note-----------------------------  
 **npm init:**
 npm init <initializer> can be used to set up a new or existing npm package. initializer in this case is an npm package named create-<initializer>, which will be installed by npm-exec, and then have its main bin executed -- presumably creating or updating package.json and running any other initialization-related operations.
 
