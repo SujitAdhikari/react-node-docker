@@ -240,8 +240,63 @@ app.listen(8080,()=>{
     console.log("The server is running")
 })
  ```
+ 
+** Create a Dockerfile:**
+   $ vim Dockerfile
+ ```
+ FROM node:14
 
+# Create app directory
+WORKDIR /usr/src/app
 
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
+
+# Bundle app source
+COPY . .
+
+EXPOSE 8080
+CMD [ "node", "index.js" ]
+ ```
+ 
+** Create a docker-compose file:**
+   $ vim docker-compose
+ ```
+ 
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    image: "devops2015/backend"
+    ports:
+      - "8081:8080"
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    image: "devops2015/frontend"
+    ports:
+      - "3030:80"
+    depends_on: 
+      - "backend" 
+  # db:
+
+** Run and build containers using docker-compose:**
+   $ docker-compose build
+   $ docker-compose up
+ 
+ 
+ ```
+ 
 -----------------------Notes-------------------------
  YAML: A dictionary is represented in a simple key: value form (the colon must be followed by a space). 
  ```
@@ -269,28 +324,3 @@ martin:
       - fortran
       - erlang 
 ```
- 
-** Create a Dockerfile:**
-   $ vim Dockerfile
- ```
- FROM node:14
-
-# Create app directory
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
-COPY . .
-
-EXPOSE 8080
-CMD [ "node", "index.js" ]
- ```
- 
