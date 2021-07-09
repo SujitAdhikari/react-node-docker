@@ -1,3 +1,7 @@
+
+  **##Frontend##**
+  ----------------------------------------------
+
 **React:**
 A JavaScript library for building user interfaces.React.js is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It’s used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components. React was first created by Jordan Walke, a software engineer working for Facebook. React first deployed on Facebook’s newsfeed in 2011 and on Instagram.com in 2012.
 
@@ -131,4 +135,23 @@ npm run build: runs the build field from the package.json scripts field. npm run
  
 $ npm build  
 or  
-$ npm run build Note: #create build dir and index.html  
+$ npm run build #Short Note: create build dir and index.html  
+
+----------------------------------------------------
+  **##Backend##**
+----------------------------------------------
+  **Node.js:**
+Node.js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications.
+Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive
+real-time applications that run across distributed devices.
+
+Node.js is an open source, cross-platform runtime environment for developing server-side and networking applications.
+Node.js applications are written in JavaScript, and can be run within the Node.js runtime on OS X, Microsoft Windows, and Linux.
+
+  **Express.js:**
+Express.js is a Node js web application server framework, which is specifically designed for building single-page, multi-page, 
+and hybrid web applications. It has become the standard server framework for node.js. Express is the backend part of 
+something known as the MEAN stack. The Express.js framework makes it very easy to develop an application which 
+can be used to handle multiple types of requests like the GET, PUT, and POST and DELETE requests.
+
+
