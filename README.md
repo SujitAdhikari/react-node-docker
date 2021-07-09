@@ -142,7 +142,7 @@ $ npm run build #Short Note: create build dir and index.html
 
 ----------------------------------------------------
   **##Backend##**
-----------------------------------------------
+----------------------------------------------------
   **Node.js:**
 Node.js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications.
 Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive
@@ -161,7 +161,14 @@ can be used to handle multiple types of requests like the GET, PUT, and POST and
 CORS is shorthand for Cross-Origin Resource Sharing. It is a mechanism to allow or restrict requested resources on a web server depend on where the HTTP request was initiated. It allows us to relax the security applied to an API. This is done by bypassing the Access-Control-Allow-Origin headers, which specify which origins can access the API.
 In other words, CORS is a browser security feature that restricts cross-origin HTTP requests with other servers and specifies which domains access your resources.
  
- Packages:
+**Docker Compose:**
+Docker Compose is a tool for running multi-container applications as a single service on Docker defined using the Compose file format. A Compose file is used to define how the one or more containers that make up your application are configured. Once you have a Compose file, you can create and start your application with a single command: docker-compose up.
+   
+Each of the containers here run in isolation but can interact with each other when required. Docker Compose files are very easy to write in a scripting language called YAML, which is an XML-based language that stands for Yet Another Markup Language. 
+ 
+
+ 
+** Packages:**
 ```
   $ npm i cors
   $ npm i nodemon
@@ -171,4 +178,119 @@ In other words, CORS is a browser security feature that restricts cross-origin H
 ```
   $ npm i cors express nodemon
 ```
+**Create a backend directory: **
+ ```
+  $ mkdir backend
+ ```
+ **Initializer**
+ ```
+  $ npm init
+ ```
+** Make a js file:**
+   $ vim index.js
+ ```
+const express = require("express");
+
+const app = express();
+
+const users = [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "address": {
+        "street": "Kulas Light",
+        "suite": "Apt. 556",
+        "city": "Gwenborough",
+        "zipcode": "92998-3874",
+        "geo": {
+          "lat": "-37.3159",
+          "lng": "81.1496"
+        }
+      },
+      "phone": "1-770-736-8031 x56442",
+      "website": "hildegard.org",
+      "company": {
+        "name": "Romaguera-Crona",
+        "catchPhrase": "Multi-layered client-server neural-net",
+        "bs": "harness real-time e-markets"
+      }
+    }
+  ]
+
+// app.use(cors)
+app.use(express.json());
+
+app.get("/api/v1/healthz",(req,res)=>{
+    console.log("hello");
+    res.send({"msg":"hi"})
+})
+
+app.get("/api/v1/users",(req,res)=>{
+    console.log(req);
+    res.send(users);
+})
+
+app.post("/api/v1/add",async(req,res)=>{
+  res.send(users);
+})
+
+app.listen(8080,()=>{
+    console.log("The server is running")
+})
+ ```
+
+
+-----------------------Notes-------------------------
+ YAML: A dictionary is represented in a simple key: value form (the colon must be followed by a space). 
+ ```
+ # An employee record
+martin:
+  name: Martin D'vloper
+  job: Developer
+  skill: Elite
+ ```
+ More complicated data structures are possible, such as lists of dictionaries, dictionaries whose values are lists or a mix of both:
+```
+# Employee records
+- martin:
+    name: Martin D'vloper
+    job: Developer
+    skills:
+      - python
+      - perl
+      - pascal
+- tabitha:
+    name: Tabitha Bitumen
+    job: Developer
+    skills:
+      - lisp
+      - fortran
+      - erlang 
+```
+ 
+** Create a Dockerfile:**
+   $ vim Dockerfile
+ ```
+ FROM node:14
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
+
+# Bundle app source
+COPY . .
+
+EXPOSE 8080
+CMD [ "node", "index.js" ]
+ ```
  
