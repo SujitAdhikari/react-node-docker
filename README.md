@@ -15,6 +15,9 @@ It's used more often than Fetch because it has a larger set of features and it s
 Nginx, pronounced like “engine-ex”, is an open-source web server that, since its initial success as a web server, is now also used as a reverse proxy, HTTP cache, and load balancer.
 Some high-profile companies using Nginx include Autodesk, Atlassian, Intuit, T-Mobile, GitLab, DuckDuckGo, Microsoft, IBM, Google, Adobe, Salesforce, VMWare, Xerox, LinkedIn, Cisco, Facebook, Target, Citrix Systems, Twitter, Apple, Intel, and many more (source).
 
+**Docker:**
+Docker is an open source platform for building, deploying, and managing containerized applications.It enables developers to package applications into containers—standardized executable components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment. Containers simplify delivery of distributed applications, and have become increasingly popular as organizations shift to cloud-native development and hybrid multicloud environments.
+
 **Create a React App:**
 --------------------------------
 $ npx create-react-app react-docker  ###create package.json(Package Dependency) using npm init command.  
@@ -154,4 +157,18 @@ and hybrid web applications. It has become the standard server framework for nod
 something known as the MEAN stack. The Express.js framework makes it very easy to develop an application which 
 can be used to handle multiple types of requests like the GET, PUT, and POST and DELETE requests.
 
-
+**Cors:**
+CORS is shorthand for Cross-Origin Resource Sharing. It is a mechanism to allow or restrict requested resources on a web server depend on where the HTTP request was initiated. It allows us to relax the security applied to an API. This is done by bypassing the Access-Control-Allow-Origin headers, which specify which origins can access the API.
+In other words, CORS is a browser security feature that restricts cross-origin HTTP requests with other servers and specifies which domains access your resources.
+ 
+ Packages:
+```
+  $ npm i cors
+  $ npm i nodemon
+  $ nodemon server.js  
+```
+ or
+```
+  $ npm i cors express nodemon
+```
+ 
