@@ -1,5 +1,5 @@
 
-  **##Frontend##**
+  **Frontend**
   ----------------------------------------------
 
 **React:**
@@ -141,7 +141,7 @@ or
 $ npm run build #Short Note: create build dir and index.html  
 
 ----------------------------------------------------
-  **##Backend##**
+  **Backend**
 ----------------------------------------------------
   **Node.js:**
 Node.js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications.
