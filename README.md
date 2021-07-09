@@ -265,7 +265,7 @@ EXPOSE 8080
 CMD [ "node", "index.js" ]
  ```
  
-** Create a docker-compose file:**
+** Create a docker-compose file under react-node-docker directory:**
    $ vim docker-compose
  ```
  
