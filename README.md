@@ -296,7 +296,89 @@ services:
  
  
  ```
+  **Check Running Docker container:**
+  ubuntu@srv:~$ sudo docker ps
+  CONTAINER ID   IMAGE                 COMMAND                  CREATED       STATUS          PORTS                                       NAMES
+  f9f66fb34904   devops2015/frontend   "/docker-entrypoint.…"   9 hours ago   Up 34 seconds   0.0.0.0:3030->80/tcp, :::3030->80/tcp       react-node-docker_frontend_1
+  5377751e0674   devops2015/backend    "docker-entrypoint.s…"   9 hours ago   Up 35 seconds   0.0.0.0:8081->8080/tcp, :::8081->8080/tcp   react-node-docker_backend_1
+
+**Verification Frontend:**
+  $ curl localhost:3030
+  Or
+**Use Browser to check:**
+ ![image](https://user-images.githubusercontent.com/82542326/125155080-6534fe00-e17f-11eb-93c2-90c5c4b039e9.png)
+
+  Request URL:  https://jsonplaceholder.typicode.com/users
+**Backend Verification:**
  
+![image](https://user-images.githubusercontent.com/82542326/125155093-74b44700-e17f-11eb-8dc9-e4a0e03a385e.png)
+
+Check frontend:
+![image](https://user-images.githubusercontent.com/82542326/125155102-80a00900-e17f-11eb-8587-ad5d28bf5e94.png)
+ 
+
+Request URL:  https://jsonplaceholder.typicode.com/users
+Now we want to load the backend api from frontend:
+
+**Update react-node-docker/frontend/components/Todolist.js**
+ ```
+    // axios.get(`https://jsonplaceholder.typicode.com/users`)
+      axios.get(`http://localhost:8081/api/v1/users`)
+```
+I am using // for comment for above line and add backed api http://localhost:8081/api/v1/users`) .
+But it is not working, I am checking this error.
+
+**Configure Reverse Proxy:**
+ ```
+server {
+	  listen 80;
+	  location / {
+	    root   /usr/share/nginx/html;
+	    index  index.html index.htm;
+	    try_files $uri $uri/ /index.html;
+	  }
+	  location /api/v1/ {
+	      proxy_pass      http://backend:8080;
+	  }
+	  error_page   500 502 503 504  /50x.html;
+	  location = /50x.html {
+	    root   /usr/share/nginx/html;
+	  }
+	}
+```
+
+**Verification reverse proxy:**
+![image](https://user-images.githubusercontent.com/82542326/125155114-91e91580-e17f-11eb-854a-2d9712fb9560.png)
+ 
+Reverse proxy is working, I want to check running container and IP address of frontend & backend container. 
+ ![image](https://user-images.githubusercontent.com/82542326/125155145-b9d87900-e17f-11eb-89f2-f608e83d5859.png)
+
+
+Here we are getting dns server:  127.0.0.11 
+
+
+
+
+
+Now I am checking port reachability from frontend container to backend inner port 8080. Install busybox-extras for telnet.
+
+![image](https://user-images.githubusercontent.com/82542326/125155158-cd83df80-e17f-11eb-9fbc-2f04c530c552.png)
+ 
+
+Log in to Backend and install net-tools for ifconfig command:
+
+![image](https://user-images.githubusercontent.com/82542326/125155167-d96fa180-e17f-11eb-8dfc-29a2e295ef06.png)
+ 
+
+
+
+I am checking reat-node-docker_default bridge inspect the bridge to get container IP network range and other.
+![image](https://user-images.githubusercontent.com/82542326/125155184-e7252700-e17f-11eb-85fe-49a82fd22a21.png)
+ 
+Here, Frontend is running on 3030 port and backend is running on port 8080, I want to run tcpdump on the port.
+![image](https://user-images.githubusercontent.com/82542326/125155185-eee4cb80-e17f-11eb-99a0-33f775ef367c.png)
+ 
+
 -----------------------Notes-------------------------
  YAML: A dictionary is represented in a simple key: value form (the colon must be followed by a space). 
  ```
