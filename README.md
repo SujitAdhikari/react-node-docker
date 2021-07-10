@@ -372,7 +372,7 @@ Log in to Backend and install net-tools for ifconfig command:
 
 
 
-I am checking reat-node-docker_default bridge inspect the bridge to get container IP network range and other.
+I am checking react-node-docker_default bridge inspect the bridge to get container IP network range and other.
 ![image](https://user-images.githubusercontent.com/82542326/125155184-e7252700-e17f-11eb-85fe-49a82fd22a21.png)
  
 Here, Frontend is running on 3030 port and backend is running on port 8080, I want to run tcpdump on the port.
