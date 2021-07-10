@@ -313,7 +313,7 @@ services:
  
 ![image](https://user-images.githubusercontent.com/82542326/125155093-74b44700-e17f-11eb-8dc9-e4a0e03a385e.png)
 
-Check frontend:
+Check frontend:  
 ![image](https://user-images.githubusercontent.com/82542326/125155102-80a00900-e17f-11eb-8587-ad5d28bf5e94.png)
  
 
@@ -380,7 +380,7 @@ Here, Frontend is running on 3030 port and backend is running on port 8080, I wa
  
 
 -----------------------Notes-------------------------
- YAML: A dictionary is represented in a simple key: value form (the colon must be followed by a space). 
+  YAML: A dictionary is represented in a simple key: value form (the colon must be followed by a space). 
  ```
  # An employee record
 martin:
