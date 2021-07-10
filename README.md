@@ -289,13 +289,13 @@ services:
     depends_on: 
       - "backend" 
   # db:
-
+ ```
 ** Run and build containers using docker-compose:**
    $ docker-compose build
    $ docker-compose up
  
  
- ```
+
   **Check Running Docker container:**
   ubuntu@srv:~$ sudo docker ps
   CONTAINER ID   IMAGE                 COMMAND                  CREATED       STATUS          PORTS                                       NAMES
