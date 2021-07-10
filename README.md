@@ -379,7 +379,7 @@ Here, Frontend is running on 3030 port and backend is running on port 8080, I wa
 ![image](https://user-images.githubusercontent.com/82542326/125155185-eee4cb80-e17f-11eb-99a0-33f775ef367c.png)
  
 
------------------------Notes-------------------------
+-----------------------Notes-------------------------  
   YAML: A dictionary is represented in a simple key: value form (the colon must be followed by a space). 
  ```
  # An employee record
